@@ -1,129 +1,125 @@
-<!--
-theme: gaia
-class:
- - invert
-headingDivider: 2 
+---
+title: "Starter Marp Slides"
+marp: true
 paginate: true
--->
+theme: cscs
+size: 16:9
+
+---
 
 <!--
-_class:
- - lead
- - invert
+_class: titlecover
+_paginate: skip
 -->
 
-# Deploy Marp to GitHub Pages
+# Taming the Metal: Platform Engineering for HPC
 
-Presentations to Webpages: Instantly!
+### Michele Brambilla, CSCS
 
-## What?
+##### DevOpsDays Zurich 2024
+---
 
-[Marp](https://marp.app/) lets you create HTML slides from markdown (like this!).
+# Welcome
 
-This presentation is both a [website](https://alexsci.com/marp-to-pages) and a [README.md](https://github.com/ralexander-phi/marp-to-pages/blob/main/README.md).
+- This is a starter Marp slide deck.
 
-## Why?
+---
 
-Treat your presentation the same way you treat code.
+## Example Slide
 
-- Use git to track changes
-- Pull requests to collaborate
-- Deploy automatically
-- See a problem? Open an issue!
+- Add your content here.
 
-## Setup
-
-Want to create your own?
-
-First, create a new repo [from the template repo](https://github.com/ralexander-phi/marp-to-pages).
-
-![](img/use-template.png)
-
-## Configure GitHub Pages
-
-Open your new repo and [setup publishing](https://help.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#choosing-a-publishing-source).
-
-You'll typically use `gh-pages` as the deploy branch.
-
-## Review Build
-
-Click on Actions tab and see if the build succeeded (it may take some time).
-
-![](img/click-actions.png)
-
-You should now see the generated files in the `gh-pages` branch.
-
-## View webpage
-
-Open your deployed webpage to see the content.
-
-Out of the box you should see `README.md` as `/index.html` and `/README.pdf`. Slides under `docs/` are also converted.
-
-## Running locally
-
-Locally you'll run commands like:
-
-```
-$ marp README.md -o build/README.pdf
-```
-
-or
-
-```
-$ npx @marp-team/marp-cli@latest README.md -o build/README.pdf
-```
-
-## As a workflow step
-
-The workflow runs an equivalent step:
-
-```
-- name: Marp Build (README.pdf)
-  uses: docker://marpteam/marp-cli:v1.7.0
-  with:
-    args: README.md -o build/README.pdf
-  env:
-    MARP_USER: root:root
-```
-
-Note the `args` match the previous slide.
-
-## Customizing the build
-
-Anything in the `build/` folder will be deployed to GitHub Pages.
-
-You can copy extra files or run further processing steps using other tools.
-
-## Learn more about Marp
-
-This is a good time to learn more about Marp. Here's some resources:
-
-- [CommonMark](https://commonmark.org/)
-- [Cheat Sheet](https://commonmark.org/help/)
-- [Themes](https://github.com/marp-team/marp-core/tree/master/themes)
-- [CSS Themes](https://marpit.marp.app/theme-css)
-- [Directives](https://marpit.marp.app/directives)
-- [VS Code plugin](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode)
-
-## Example Sites
-
-Known sites using this action are:
-
-- [University of Illinois at Urbana-Champaign's CS 199 Even More Practice](https://cs199emp.netlify.app/) [(code)](https://github.com/harsh183/emp-125)
-- [Exploring agent based models](https://roiarthurb.github.io/Talk-UMMISCO_06-07-2020/) [(code)](https://github.com/RoiArthurB/Talk-UMMISCO_06-07-2020)
-
-Send a [pull request](https://github.com/ralexander-phi/marp-to-pages) to get your site added.
-
-## Publish your slides
-
-When you are ready to share your presentation, commit or merge to `main` and your content on GitHub Pages will automatically update.
-
-# 🎉
-<!--
-_class:
- - lead
- - invert
--->
-### Hooray!
+---
 
 
+---
+
+<!-- _class: platform-overview -->
+# Platform Engineering
+
+<div class="platform-grid">
+  <div class="platform-card">
+    <h3>Golden Paths</h3>
+    <p>Reduce cognitive load.<br>Pre-paved routes for developers.</p>
+  </div>
+  <div class="platform-card">
+    <h3>Self-Service</h3>
+    <p>Teams provision what they need, when they need it.</p>
+  </div>
+  <div class="platform-card">
+    <h3>Internal Platform</h3>
+    <p>One product serving all engineering teams.</p>
+  </div>
+</div>
+
+<!-- bottom-left attribution -->
+<div style="position:absolute;left:10%;bottom:20%;z-index:3;font-size:1.6vh;color:currentColor;opacity:0.85">platformengineering.org</div>
+
+---
+
+# The Assumption
+
+> "Platform Engineering assumes your infrastructure is in the cloud."
+
+<div style="margin-top:18px;padding:18px;background:#213a50;border-left:6px solid #d9571a;color:#ffb39b;">What if there is no cloud? What if it's 10,000 bare-metal nodes?</div>
+
+---
+
+<!-- _class: alps -->
+# Alps — The Supercomputer
+
+<div class="platform-grid alps-grid">
+  <div class="platform-card">
+    <div class="stat-value">434.9</div>
+    <div class="stat-label">Petaflops</div>
+    <div class="stat-note">sustained peak</div>
+  </div>
+  <div class="platform-card">
+    <div class="stat-value">10</div>
+    <div class="stat-label">Exaflops</div>
+    <div class="stat-note">BF16 (AI)</div>
+  </div>
+  <div class="platform-card">
+    <div class="stat-value">2,688</div>
+    <div class="stat-label">Nodes</div>
+    <div class="stat-note">Grace-Hopper GPUs</div>
+  </div>
+  <div class="platform-card">
+    <div class="stat-value">4</div>
+    <div class="stat-label">Sites</div>
+    <div class="stat-note">Lugano · Lausanne · PSI · ECMWF</div>
+  </div>
+</div>
+
+<div style="margin-top:18px;padding:14px;border-radius:4px;text-align:center;">HPE Cray EX · Slingshot-11 Interconnect (200 Gbps/node) · 100+ PB storage</div>
+
+---
+
+# One Hardware, Many Worlds
+
+<div class="platform-grid one-hardware">
+  <div class="platform-card">
+    <div class="stat-label">MeteoSwiss</div>
+    <div class="stat-note">Operational weather</div>
+    <div class="stat-note">forecast 24/7</div>
+  </div>
+  <div class="platform-card">
+     <div class="stat-label">User Lab</div>
+     <div class="stat-note">Research HPC</div>
+  </div>
+  <div class="platform-card">
+    <div class="stat-label">AI/ML</div>
+    <div class="stat-note">GPU-intensive</div>
+    <div class="stat-note">training workloads</div>
+    <div class="stat-note">inference models</div>
+  </div>
+  <div class="platform-card">
+    <div class="stat-value">WLCG/SKA</div>
+    <div class="stat-label">High-throughput</div>
+    <div class="stat-note">data processing</div>
+  </div>
+</div>
+
+
+<!-- Use HTML comments for speaker notes -->
+<!-- Speaker notes: Talk about project goals -->
