@@ -80,7 +80,15 @@
 
 ## SOLUTION (Slides 10–15)
 
-### Slide 10: Git as the Bridge
+### Slide 10: We Didn't Read a Book
+**Visual:** A "Platform Engineering" textbook with a big X through it. Then show your actual solution stacked on top.
+
+**Script:**
+"We didn't know we were doing 'Platform Engineering'; we were just survivalists who built what worked."
+
+---
+
+### Slide 11: Git as the Bridge
 **Visual:** A Git commit log, or a merge request interface. Shows multiple authors (Ops and Dev names mixed).
 
 **Script:**
@@ -88,19 +96,11 @@
 
 ---
 
-### Slide 11: Delivery as Code
+### Slide 12: Delivery as Code
 **Visual:** Split screen: GitLab CI/CD pipeline (showing green checkmarks) on the left, Terraform code snippets on the right.
 
 **Script:**
 "GitLab pipelines validate every change automatically. Terraform defines resources. No manual commands on servers. Every infrastructure change is a reviewed commit. Bare metal behaves like software."
-
----
-
-### Slide 12: We Didn't Read a Book
-**Visual:** A "Platform Engineering" textbook with a big X through it. Then show your actual solution stacked on top.
-
-**Script:**
-"We didn't follow a Platform Engineering handbook. We just merged the teams and built what worked. Later, we realized it matched industry standards. We'd accidentally invented the right thing."
 
 ---
 
