@@ -6,7 +6,7 @@
 **Visual:** High-impact photograph of Alps supercomputer cabinets with blue "ALPS" logo.
 
 **Script:**
-"This is a story about Taming the Metal. We were standing at the foot of Alps—not just a mountain in Switzerland, but one of the world's most powerful supercomputing infrastructures. 2,688 GPU nodes. 200 Gbps injection bandwidth. Pure performance. But like any high-altitude peak, it's cold, rigid, and unforgiving. And we had to figure out how to make it work."
+"This is a story about Taming the Metal. We were standing at the foot of Alps—not just a mountain in Switzerland, but one of the world's most powerful supercomputing infrastructures."
 
 ---
 
@@ -14,7 +14,7 @@
 **Visual:** Three icons/logos: MeteoSwiss, Research Lab, AI/ML team. All pointing to the same hardware.
 
 **Script:**
-"Here's the problem: one machine serves three completely different masters. MeteoSwiss needs it for weather forecasts with tight SLAs. Researchers need flexible HPC clusters. AI teams need GPUs for training. Different workflows. Different demands. Same hardware. And nobody agreed on how to run it."
+"One machine serves several masters. MeteoSwiss needs weather forecasts. Researchers need HPC. AI teams need GPUs. Different workflows. Same hardware. Nobody agreed on how to run it."
 
 ---
 
@@ -22,7 +22,7 @@
 **Visual:** Two tall walls separating "Ops" on the left from "Devs" on the right. Hardware at the base.
 
 **Script:**
-"Behind that hardware challenge was a human one. Our Ops team owned the metal—they understood the hardware, the networking, the bare-metal reality. Our Dev team built solutions—automation, orchestration, modern tooling. But they lived in separate worlds. Changes required hand-offs. Tickets lived in limbo. And nothing moved fast."
+"Our Ops team owned the metal. Our Dev team built automation. They lived in separate worlds. Changes required hand-offs. Tickets lived in limbo. Nothing moved fast enough."
 
 ---
 
@@ -32,7 +32,7 @@
 **Visual:** A tangled mess of Ansible playbooks, sticky notes, handwritten documentation. Maybe a single server rack in shadow.
 
 **Script:**
-"Our Ops team was small but dedicated. They lived in a world of manual Ansible playbooks—often stored on individual machines. Every change was bespoke. Every fix was handcrafted. The hardware was king, and everything else bent to its will. Flexibility? That wasn't part of the vocabulary."
+"Ops lived in manual Ansible playbooks, often on individual machines. Every change was bespoke. Every fix handcrafted. Flexibility wasn't in the vocabulary."
 
 ---
 
@@ -40,7 +40,7 @@
 **Visual:** Three bottleneck illustrations: a narrow hourglass, a door with a line of people, a calendar marked with X's.
 
 **Script:**
-"We hit walls everywhere. Only a few engineers knew the secrets of each cluster—knowledge lived in their heads. Building images with vendor-provided tooling was a black box nightmare. And system boots took hours. Every change required long-lead scheduling. Every ticket was a negotiation."
+"Only a few engineers knew the secrets. Building images was a black box. System boots took hours. Every change required weeks of scheduling. Every ticket was a negotiation."
 
 ---
 
@@ -66,7 +66,7 @@
 **Visual:** Two paths or rivers converging into one strong stream flowing toward mountains.
 
 **Script:**
-"When the ivory tower failed, we did something radical. We merged the teams. Ops and Devs became one unit. Not in name only—in practice. They sat together. They owned problems together. In a couple of months—not years—we pushed through staging into production. We found the bugs together, fixed them together, and started taming the metal."
+"We did something radical: we merged Ops and Devs into one unit. Not politics—actual unity. In 2 months, not years, we shipped to production. We broke the silo."
 
 ---
 
@@ -74,17 +74,17 @@
 **Visual:** A circular diagram showing "Code," "Infrastructure," "Operations," all flowing together. Or just the words overlapping.
 
 **Script:**
-"What changed wasn't just org structure. It was mindset. Infrastructure became code. Code became infrastructure. Operations became automation. There was no 'throw it over the wall'—everyone owned the outcome. And with shared ownership came shared urgency and shared accountability."
+"What changed: infrastructure became code. Code became infrastructure. No hand-offs. One team, one problem to solve, shared accountability. That's when everything accelerated."
 
 ---
 
 ## SOLUTION (Slides 10–15)
 
-### Slide 10: One Team, One Workflow
+### Slide 10: Git as the Bridge
 **Visual:** A Git commit log, or a merge request interface. Shows multiple authors (Ops and Dev names mixed).
 
 **Script:**
-"The foundation was Git. Everything lived there. Not just application code—infrastructure, configurations, deployments. When Ops and Devs speak the same language—Git—magic happens. Pull requests become the conversation. History becomes transparent. And there's nowhere to hide a bad change."
+"We chose Git as the common language. Not just for code—for infrastructure, configs, deployments. Every change became a pull request. Ops and Devs reviewed together. No secrets. No hand-offs."
 
 ---
 
@@ -92,39 +92,39 @@
 **Visual:** Split screen: GitLab CI/CD pipeline (showing green checkmarks) on the left, Terraform code snippets on the right.
 
 **Script:**
-"Our delivery plane is pure code. GitLab pipelines validate every change. Terraform defines every resource. No more 'I'll run this command on the server.' No more mystery. Every infrastructure change is a commit, reviewed by the team, tested in CI, deployed by automation. The bare metal behaves like software."
+"GitLab pipelines validate every change automatically. Terraform defines resources. No manual commands on servers. Every infrastructure change is a reviewed commit. Bare metal behaves like software."
 
 ---
 
-### Slide 12: Orchestration Engine
-**Visual:** Split visual: Nomad managing compute nodes on the left, ArgoCD managing services/pods on the right. Arrows connecting both to the hardware.
+### Slide 12: We Didn't Read a Book
+**Visual:** A "Platform Engineering" textbook with a big X through it. Then show your actual solution stacked on top.
 
 **Script:**
-"Every platform needs an orchestrator. We use two: Nomad schedules tasks directly on bare-metal compute nodes—no abstraction layer getting in the way. ArgoCD manages the services plane—Kubernetes, containers, all the modern tooling. Together, they partition one massive machine into many logical platforms without teams stepping on each other."
+"We didn't follow a Platform Engineering handbook. We just merged the teams and built what worked. Later, we realized it matched industry standards. We'd accidentally invented the right thing."
 
 ---
 
-### Slide 13: vServices: Environments on Demand
-**Visual:** Modular stacked blocks labeled "Slurm," "ML Tools," "Storage," "IAM," all stacking on top of a "Generic OS Image" base layer.
+### Slide 13: Orchestration: No More Coordination
+**Visual:** A split visual: Nomad managing compute nodes and ArgoCD managing the Kubernetes services plane
 
 **Script:**
-"In the resource plane, we decoupled the user environment from the hardware. We call them vServices—modular, reusable software stacks. A research team writes a vService that includes Slurm and their libraries. An AI team writes one with PyTorch and training tools. They deploy on top of the same generic OS image. Same hardware, different worlds. No silos."
+"Every platform needs an orchestrator. We use two: Nomad schedules tasks directly on bare-metal nodes, while ArgoCD manages the service plane. Together, they make complex hardware feel like cloud."
 
 ---
 
-### Slide 14: One Hardware, Many Platforms
-**Visual:** A high-level architecture diagram showing the bare-metal layer at the bottom, then vClusters on top, then different user communities (MeteoSwiss, Research, AI) using different vClusters simultaneously.
+### Slide 14: vServices: The Resource Plane
+**Visual:** Modular blocks (Slurm, ML, IAM) stacking on top of a "Generic OS Image" base
 
 **Script:**
-"Here's how it all connects. We have 10,000 bare-metal nodes. On top, we run 16 vClusters—logical partitions, each with its own orchestration, its own resource model, its own SLAs. MeteoSwiss gets one. Researchers get another. AI teams get another. One machine. Many platforms. One workflow. That's the architectural win."
+"vServices are our building blocks. By decoupling user environments from hardware, a tailored stacks—from Slurm to AI—on generic OS images can be deployed. One hardware, many software-defined worlds."
 
 ---
 
 ### Slide 15: The DIY Toolkit
-**Visual:** A professional toolkit, or construction site with builders. Caption: "Users write their own vServices."
+**Visual:** A first-person view of a high-tech cockpit or a hand holding a "Master Key"
 
 **Script:**
-"The power of this architecture is that it's open. In principle—and increasingly in practice—any scientific community can now write their own vService and bring their own environment. They're not waiting for Ops to hand-craft a solution. They're building it themselves. This is what breaking silos actually looks like: users have agency."
+"The real breakthrough is autonomy. Cluster owners now have the keys. They don’t need to open tickets and wait; they can apply their own changes through code. The gatekeeper is officially gone."
 
 ---
 
@@ -134,40 +134,40 @@
 **Visual:** A green dashboard showing metrics: 16 vClusters, 95% uptime, number of CPU hours shipped. Include a small "Under Construction" icon or humor.
 
 **Script:**
-"We didn't solve everything. But we shipped. Today, 16 vClusters run in production, delivering millions of CPU hours to research and weather forecasting. We hit our 95% availability target for production workloads. We proved that platform engineering on bare metal works—if you solve the human problem first."
+"16 vClusters in production. 95% uptime. Millions of CPU hours shipped. Platform engineering on bare metal works. But only because we solved the human problem first."
 
 ---
 
-### Slide 17: Cultural Shift
+### Slide 17: Shifting the Culture
 **Visual:** Before/after: Heavy "Ticket" icon on the left, replaced by sleek "Merge Request" icon on the right. Show the change.
 
 **Script:**
-"It wasn't just a technical win. It was cultural. We moved from 'open a ticket and wait' to 'open a merge request and ship.' We dramatically reduced toil. Our admins went from firefighting to building. And—this matters—they had visibility and autonomy. They weren't gatekeepers anymore. They were enablers."
+"Cultural shifts followed. We moved from 'opening tickets' to 'opening Merge Requests.' We reduced toil, gave admins autonomy, and killed the gatekeeper model. They are finally enablers, not roadblocks."
 
 ---
 
-### Slide 18: What Actually Worked (and What Didn't)
-**Visual:** Two columns: "Worked" (green checkmarks) and "Still Hard" (yellow caution signs).
+### Slide 18: The Honest Truth
+**Visual:** Two columns labeled "Worked" (Git, Automation) and "Still Hard" (Self-Service).
 
 **Script:**
-"Let's be honest. Unifying the teams worked. Git-based workflows worked. Automation reduced toil. But self-service vServices? Still emerging. Some communities embraced it; others still ask Ops. We're not done. The beast is tamed, but it's not fully domesticated. And that's okay—we have momentum."
+"et’s be honest. Unifying teams and Git automation worked. But self-service is still emerging. The beast is tamed, but not domesticated. That’s okay—we finally have the momentum."
 
 ---
 
 ## FUTURE (Slides 19–20)
 
 ### Slide 19: What's Still Hard
-**Visual:** A mountain peak with a higher peak visible in the distance. Or a partially constructed bridge.
+**Visual:** A high-quality aerial photo of the winding Maloja Pass mountain road.
 
 **Script:**
-"We still struggle with some things. Multi-tenancy gets complex. Resource isolation isn't perfect. Cost attribution is fuzzy. Building and maintaining vServices takes effort—we don't have a library yet, just individual solutions. And not every team has embraced self-service. These are the Maloja Passes ahead—technical curves we have to navigate."
+"Navigating the Maloja Pass road is our journey’s metaphor. Mastery of technical curves—from hardware struggles to cultural shifts—reaches the summit by embracing automation and modern Platform Engineering principles."
 
 ---
 
 ### Slide 20: The Next Mountain
-**Visual:** A sweeping vista from a mountain peak, with a much higher, distant peak labeled "vServices 2.0" or "Complete Self-Service."
+**Visual:** A sweeping vista from a mountain peak, with a much higher, distant peak labeled "vServices 2.0"
 
 **Script:**
-"But the view from the top is just the next mountain. We're building vServices 2.0—better templating, clearer SLAs, real cost models. The goal is radical self-service: communities define their entire stack, deploy it themselves, pay for what they use. No silos. No gatekeepers. The real taming of the metal. We're not there yet. But we're climbing."
+"The summit reveals the next mountain. To overcome current limitations and reach complete automation, we are building vServices 2.0. The beast is tamed, but the journey continues. Thank you."
 
 ---
