@@ -124,7 +124,7 @@
 **Visual:** A first-person view of a high-tech cockpit or a hand holding a "Master Key"
 
 **Script:**
-"The real breakthrough is autonomy. Cluster owners now have the keys. They don’t need to open tickets and wait; they can apply their own changes through code. The gatekeeper is officially gone."
+"Technically, the gatekeeper is dead. The person responsible for the cluster now has the keys. Through Git and Merge Requests, they apply their own changes. The platform is finally programmable."
 
 ---
 
@@ -146,11 +146,11 @@
 
 ---
 
-### Slide 18: The Honest Truth
-**Visual:** Two columns labeled "Worked" (Git, Automation) and "Still Hard" (Self-Service).
+### Slide 18: The Cultural Reality (The "Last Mile")
+**Visual:** A split screen: "Tools: Ready" (Checkmark) vs "Culture: Climbing" (Maloja Pass teaser).
 
 **Script:**
-"et’s be honest. Unifying teams and Git automation worked. But self-service is still emerging. The beast is tamed, but not domesticated. That’s okay—we finally have the momentum."
+"The reality? It’s complicated. While the code is ready, true self-service culture is still emerging. The beast is tamed, but not domesticated. We have the tools; now we need adoption."
 
 ---
 
