@@ -1,6 +1,6 @@
 # Pacing Notes
 
-Each script is **roughly 50–80 words**, which is **15–20 seconds per slide** in a 5-minute Ignite (accounting for visual transitions). This gives you breathing room—you can linger on technical slides or emphasize emotional moments without rushing.
+Each script is **roughly 30 words**, which is **15–20 seconds per slide** in a 5-minute Ignite (accounting for visual transitions). This gives you breathing room—you can linger on technical slides or emphasize emotional moments without rushing.
 
 **Key rhetorical moves:**
 - Slides 1–3: Problem setup (audience buys in)
